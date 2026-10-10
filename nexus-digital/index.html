@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Digital | Soluções Tecnológicas & Serviços Digitais</title>
+    <meta name="description" content="Transforme seu negócio com nossos serviços de desenvolvimento web, design UI/UX, inteligência artificial e marketing digital. Soluções sob medida para sua empresa.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navegação -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-cube"></i></div>
+                <span>Nexus<strong>Digital</strong></span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Início</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+                    <li><a href="#processo" class="nav-link">Como Funciona</a></li>
+                    <li><a href="#planos" class="nav-link">Planos</a></li>
+                    <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="#contato" class="btn btn-outline nav-btn-hide">Falar com Consultor</a>
+                <a href="#orcamento" class="btn btn-primary open-modal-btn">Solicitar Orçamento</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    <span>Inovação & Alta Performance</span>
+                </div>
+                <h1 class="hero-title">
+                    Transformamos ideias em <span class="gradient-text">Experiências Digitais</span> de alto impacto.
+                </h1>
+                <p class="hero-description">
+                    Oferecemos um ecossistema completo de serviços estratégicos em tecnologia, design e inteligência artificial para escalar o seu negócio e acelerar seus resultados.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#servicos" class="btn btn-primary btn-lg">
+                        <span>Explorar Serviços</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#contato" class="btn btn-secondary btn-lg">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Atendimento Rápido</span>
+                    </a>
+                </div>
+                
+                <div class="hero-trust">
+                    <p class="trust-title">Empresas e parceiros que confiam em nós:</p>
+                    <div class="trust-logos">
+                        <span><i class="fa-solid fa-bolt"></i> TechCorp</span>
+                        <span><i class="fa-solid fa-chart-line"></i> GrowthX</span>
+                        <span><i class="fa-solid fa-layer-group"></i> StackLab</span>
+                        <span><i class="fa-solid fa-shield-halved"></i> CyberGuard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <img src="assets/images/hero.jpg" alt="Equipe de tecnologia Nexus Digital desenvolvendo serviços inovadores" class="hero-img">
+                    
+                    <!-- Floating Cards Decorativos -->
+                    <div class="glass-card float-card float-1">
+                        <div class="float-icon icon-success">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <div class="float-info">
+                            <span class="float-value">+340%</span>
+                            <span class="float-label">Crescimento Médio</span>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card float-card float-2">
+                        <div class="float-icon icon-purple">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div class="float-info">
+                            <span class="float-value">IA & Automação</span>
+                            <span class="float-label">Serviços Inteligentes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stat Bar Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="250">250+</h3>
+                    <p class="stat-label">Projetos Entregues</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="99">99.4%</h3>
+                    <p class="stat-label">Satisfação dos Clientes</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="15">15+</h3>
+                    <p class="stat-label">Prêmios de Inovação</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="24">24/7</h3>
+                    <p class="stat-label">Suporte Dedicado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Cards Principal) -->
+    <section class="section servicos-section" id="servicos">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">O Que Fazemos</span>
+                <h2 class="section-title">Nossa Cartela de <span class="gradient-text">Serviços Especializados</span></h2>
+                <p class="section-description">
+                    Soluções sob medida para impulsionar a presença digital, otimizar processos e gerar mais conversões para o seu negócio.
+                </p>
+                
+                <!-- Category Filter Buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos os Serviços</button>
+                    <button class="filter-btn" data-filter="dev">Desenvolvimento</button>
+                    <button class="filter-btn" data-filter="design">Design & UX</button>
+                    <button class="filter-btn" data-filter="marketing">Marketing & SEO</button>
+                    <button class="filter-btn" data-filter="ai">IA & Automação</button>
+                </div>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card" data-category="dev">
+                    <div class="card-badge">Mais Solicitado</div>
+                    <div class="card-icon icon-blue">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="card-title">Desenvolvimento Web & Apps</h3>
+                    <p class="card-text">
+                        Criação de sites institucionais, landing pages de alta conversão, e-commerce e aplicativos móveis rápidos, seguros e responsivos.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Sites & Web Apps Responsivos</li>
+                        <li><i class="fa-solid fa-check"></i> Código Otimizado para SEO</li>
+                        <li><i class="fa-solid fa-check"></i> Integração com APIs & Pagamentos</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="price-tag">A partir de <strong>R$ 1.490</strong></span>
+                        <a href="#contato" class="card-btn" onclick="selectService('Desenvolvimento Web')">
+                            Contratar <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card" data-category="design">
+                    <div class="card-icon icon-purple">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    <h3 class="card-title">Design UI/UX & Identity</h3>
+                    <p class="card-text">
+                        Projetamos interfaces modernas e intuitivas focadas na experiência do usuário e no fortalecimento do branding da sua marca.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Protótipos Interativos no Figma</li>
+                        <li><i class="fa-solid fa-check"></i> Redesign Completo de Marcas</li>
+                        <li><i class="fa-solid fa-check"></i> Design System Reutilizável</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="price-tag">A partir de <strong>R$ 1.190</strong></span>
+                        <a href="#contato" class="card-btn" onclick="selectService('Design UI/UX')">
+                            Contratar <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card" data-category="marketing">
+                    <div class="card-icon icon-emerald">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="card-title">Marketing Digital & Tráfego</h3>
+                    <p class="card-text">
+                        Estratégias avançadas de tráfego pago (Google Ads, Meta Ads), inbound marketing e funis de vendas direcionados a clientes qualificados.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Gestão de Campanhas de Anúncios</li>
+                        <li><i class="fa-solid fa-check"></i> Otimização de Conversão (CRO)</li>
+                        <li><i class="fa-solid fa-check"></i> Relatórios Mensais com Métricas</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="price-tag">A partir de <strong>R$ 990/mês</strong></span>
+                        <a href="#contato" class="card-btn" onclick="selectService('Marketing Digital')">
+                            Contratar <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card" data-category="ai">
+                    <div class="card-badge highlight">Tendência</div>
+                    <div class="card-icon icon-cyan">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="card-title">Inteligência Artificial & Bots</h3>
+                    <p class="card-text">
+                        Implementação de agentes de IA, chatbots inteligentes para WhatsApp/Atendimento e automação de processos repetitivos.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Agentes de Atendimento 24/7</li>
+                        <li><i class="fa-solid fa-check"></i> Automações via Make / n8n / APIs</li>
+                        <li><i class="fa-solid fa-check"></i> Integração com ChatGPT & Claude</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="price-tag">A partir de <strong>R$ 1.890</strong></span>
+                        <a href="#contato" class="card-btn" onclick="selectService('IA e Automação')">
+                            Contratar <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card" data-category="marketing">
+                    <div class="card-icon icon-orange">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h3 class="card-title">SEO & Posicionamento Google</h3>
+                    <p class="card-text">
+                        Posicione seu site nas primeiras páginas do Google organicamente com auditoria SEO técnica, conteúdo e estratégia de autoridade.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Otimização de Palavras-chave</li>
+                        <li><i class="fa-solid fa-check"></i> Velocidade & Core Web Vitals</li>
+                        <li><i class="fa-solid fa-check"></i> SEO Local para Negócios</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="price-tag">A partir de <strong>R$ 850/mês</strong></span>
+                        <a href="#contato" class="card-btn" onclick="selectService('SEO')">
+                            Contratar <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card" data-category="dev">
+                    <div class="card-icon icon-rose">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3 class="card-title">Consultoria Cloud & Segurança</h3>
+                    <p class="card-text">
+                        Migração de sistemas para a nuvem (AWS, Google Cloud), configuração de servidores resilientes e auditoria de segurança da informação.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Arquitetura de Servidores Escaláveis</li>
+                        <li><i class="fa-solid fa-check"></i> Backup Automatizado & SSL</li>
+                        <li><i class="fa-solid fa-check"></i> Monitoramento de Vulnerabilidades</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="price-tag">A partir de <strong>R$ 1.250</strong></span>
+                        <a href="#contato" class="card-btn" onclick="selectService('Consultoria Cloud')">
+                            Contratar <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us / Differentials Section -->
+    <section class="section diferenciais-section" id="diferenciais">
+        <div class="container">
+            <div class="diferenciais-wrapper">
+                <div class="diferenciais-image">
+                    <img src="assets/images/about.jpg" alt="Diferenciais dos serviços Nexus Digital" class="about-img">
+                    <div class="floating-experience-badge">
+                        <span class="exp-number">8+</span>
+                        <span class="exp-text">Anos de Excelência em Tecnologia</span>
+                    </div>
+                </div>
+
+                <div class="diferenciais-content">
+                    <span class="section-subtitle">Por Que Escolher Nossos Serviços</span>
+                    <h2 class="section-title">Engenharia, Inovação e Foco em <span class="gradient-text">Resultados Reais</span></h2>
+                    <p class="section-description">
+                        Não entregamos apenas código ou layouts bonitos; construímos soluções estratégicas alinhadas aos objetivos do seu negócio.
+                    </p>
+
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-rocket"></i></div>
+                            <div class="feature-info">
+                                <h4>Entrega Ágil & Pontual</h4>
+                                <p>Projetos desenvolvidos com metodologia ágil, acompanhamento quinzenal e prazos cumpridos rigorosamente.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                            <div class="feature-info">
+                                <h4>Garantia & Suporte Pós-Entrega</h4>
+                                <p>Oferecemos 90 dias de garantia completa contra falhas e suporte técnico contínuo para sua tranquilidade.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                            <div class="feature-info">
+                                <h4>Foco em Alta Performance</h4>
+                                <p>Desenvolvimento otimizado para carregamento ultra rápido e máxima taxa de conversão de visitantes em clientes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section processo-section" id="processo">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Metodologia Comprovada</span>
+                <h2 class="section-title">Como Funciona a <span class="gradient-text">Nossa Prestação de Serviços</span></h2>
+                <p class="section-description">
+                    Um fluxo transparente em 4 etapas estruturadas para garantir o sucesso do seu projeto do início ao fim.
+                </p>
+            </div>
+
+            <div class="process-steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+                    <h3>Diagnóstico & Briefing</h3>
+                    <p>Reunião inicial para compreender suas metas, público-alvo, concorrentes e alinhar todos os requisitos do projeto.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                    <h3>Planejamento & Protótipo</h3>
+                    <p>Criação do mapa do projeto, wireframes, arquitetura de informação e prototipagem visual para aprovação.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Desenvolvimento & Testes</h3>
+                    <p>Construção técnica com código limpo, integrações de segurança, revisão de SEO e testes rigorosos em dispositivos.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <div class="step-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+                    <h3>Lançamento & Suporte</h3>
+                    <p>Publicação do projeto no ambiente final, treinamento da sua equipe e monitoramento contínuo dos resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section (Cards de Planos) -->
+    <section class="section planos-section" id="planos">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Investimento Transparente</span>
+                <h2 class="section-title">Planos Recomendados para <span class="gradient-text">Cada Fase</span></h2>
+                <p class="section-description">Escolha a opção que melhor se adapta às necessidades atuais do seu negócio.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Pricing Card 1 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="plan-name">Essencial</span>
+                        <p class="plan-desc">Ideal para profissionais liberais e pequenas empresas que precisam se posicionar rápido.</p>
+                        <div class="plan-price">
+                            <span class="currency">R$</span>
+                            <span class="amount">1.290</span>
+                            <span class="period">/único</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Landing Page Moderna & Responsiva</li>
+                        <li><i class="fa-solid fa-check"></i> Formes de Contato & WhatsApp</li>
+                        <li><i class="fa-solid fa-check"></i> Otimização Básica de SEO</li>
+                        <li><i class="fa-solid fa-check"></i> Hospedagem grátis por 3 meses</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Sistema de Blog Integrado</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Agente de IA para Atendimento</li>
+                    </ul>
+                    <a href="#contato" class="btn btn-outline btn-block" onclick="selectPlan('Plano Essencial')">Selecionar Plano</a>
+                </div>
+
+                <!-- Pricing Card 2 (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Mais Popular</div>
+                    <div class="pricing-header">
+                        <span class="plan-name">Profissional / Business</span>
+                        <p class="plan-desc">Perfeito para empresas em expansão que buscam autoridade e captação ativa de leads.</p>
+                        <div class="plan-price">
+                            <span class="currency">R$</span>
+                            <span class="amount">2.790</span>
+                            <span class="period">/único</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Site Completo até 6 Páginas ou App Web</li>
+                        <li><i class="fa-solid fa-check"></i> Design UI/UX Personalizado no Figma</li>
+                        <li><i class="fa-solid fa-check"></i> SEO Avançado & Velocidade Otimizada</li>
+                        <li><i class="fa-solid fa-check"></i> Integração com CRM & Automações</li>
+                        <li><i class="fa-solid fa-check"></i> Chatbot / WhatsApp Automático</li>
+                        <li><i class="fa-solid fa-check"></i> 60 Dias de Suporte VIP</li>
+                    </ul>
+                    <a href="#contato" class="btn btn-primary btn-block" onclick="selectPlan('Plano Profissional')">Contratar Agora</a>
+                </div>
+
+                <!-- Pricing Card 3 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="plan-name">Enterprise / Custom</span>
+                        <p class="plan-desc">Soluções robustas, e-commerce avançado ou plataformas de tecnologia sob medida.</p>
+                        <div class="plan-price">
+                            <span class="currency">Sob Consulta</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Arquitetura Personalizada e Escalável</li>
+                        <li><i class="fa-solid fa-check"></i> Integrações com APIs Proprietárias</li>
+                        <li><i class="fa-solid fa-check"></i> Treinamento de Modelos de IA Dedicados</li>
+                        <li><i class="fa-solid fa-check"></i> SLA de Atendimento em até 2 Horas</li>
+                        <li><i class="fa-solid fa-check"></i> Gerente de Conta Dedicado</li>
+                        <li><i class="fa-solid fa-check"></i> Suporte Técnico 24/7</li>
+                    </ul>
+                    <a href="#contato" class="btn btn-outline btn-block" onclick="selectPlan('Plano Enterprise')">Falar com Consultor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (Cards de Depoimentos) -->
+    <section class="section depoimentos-section" id="depoimentos">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Histórias de Sucesso</span>
+                <h2 class="section-title">O Que Dizem Nossos <span class="gradient-text">Clientes</span></h2>
+                <p class="section-description">Confira o depoimento de quem já transformou a operação da sua empresa conosco.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="quote-text">
+                        "A Nexus reformulou todo nosso site institucional e implementou um agente de atendimento no WhatsApp. Nossas conversões aumentaram em mais de 180% em 2 meses!"
+                    </p>
+                    <div class="client-profile">
+                        <div class="client-avatar">
+                            <span>RC</span>
+                        </div>
+                        <div class="client-info">
+                            <h4 class="client-name">Ricardo Carvalho</h4>
+                            <span class="client-role">CEO, Finovax Soluções</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="quote-text">
+                        "Profissionalismo impecável! O prazo de entrega do nosso aplicativo web foi respeitado no dia exato e a qualidade do código superou todas as expectativas da nossa equipe."
+                    </p>
+                    <div class="client-profile">
+                        <div class="client-avatar avatar-purple">
+                            <span>MS</span>
+                        </div>
+                        <div class="client-info">
+                            <h4 class="client-name">Mariana Silva</h4>
+                            <span class="client-role">Diretora de Marketing, HealthTech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="quote-text">
+                        "As campanhas de tráfego pago aliadas com a nova landing page nos trouxeram clientes altamente qualificados diariamente. O retorno sobre o investimento foi rápido."
+                    </p>
+                    <div class="client-profile">
+                        <div class="client-avatar avatar-emerald">
+                            <span>FA</span>
+                        </div>
+                        <div class="client-info">
+                            <h4 class="client-name">Felipe Almeida</h4>
+                            <span class="client-role">Fundador, LogiMove</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Budget Request Section -->
+    <section class="section contato-section" id="contato">
+        <div class="container">
+            <div class="contato-wrapper">
+                <div class="contato-info">
+                    <span class="section-subtitle">Vamos Conversar</span>
+                    <h2 class="section-title">Pronto para Elevar Seus <span class="gradient-text">Serviços ao Próximo Nível?</span></h2>
+                    <p class="section-description">
+                        Preencha o formulário para receber uma proposta personalizada ou agende uma reunião rápida com nossos especialistas.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-card-item">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h5>E-mail Direto</h5>
+                                <p>contato@nexusdigital.com.br</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card-item">
+                            <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <h5>WhatsApp Comercial</h5>
+                                <p>+55 (11) 99876-5432</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card-item">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h5>Escritório</h5>
+                                <p>Av. Paulista, 1000 - São Paulo, SP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contato-form-container">
+                    <form class="contato-form" id="contatoForm">
+                        <h3 class="form-title">Solicite um Orçamento</h3>
+                        
+                        <div class="form-group">
+                            <label for="nome">Nome Completo *</label>
+                            <input type="text" id="nome" required placeholder="Digite seu nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail Profissional *</label>
+                            <input type="email" id="email" required placeholder="seu@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone">Telefone / WhatsApp *</label>
+                            <input type="tel" id="telefone" required placeholder="(11) 90000-0000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="servico">Serviço de Interesse *</label>
+                            <select id="servico" required>
+                                <option value="" disabled selected>Selecione um serviço...</option>
+                                <option value="Desenvolvimento Web">Desenvolvimento Web & Apps</option>
+                                <option value="Design UI/UX">Design UI/UX & Identity</option>
+                                <option value="Marketing Digital">Marketing Digital & Tráfego</option>
+                                <option value="IA e Automação">Inteligência Artificial & Bots</option>
+                                <option value="SEO">SEO & Posicionamento Google</option>
+                                <option value="Consultoria Cloud">Consultoria Cloud & Segurança</option>
+                                <option value="Outro">Outra Demanda Especial</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem">Detalhes do Projeto *</label>
+                            <textarea id="mensagem" rows="4" required placeholder="Descreva brevemente seus objetivos, prazos ou necessidades..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                            <span>Enviar Solicitação</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon"><i class="fa-solid fa-cube"></i></div>
+                        <span>Nexus<strong>Digital</strong></span>
+                    </a>
+                    <p class="footer-text">
+                        Sua parceira estratégica em divulgação, desenvolvimento e transformação digital de serviços.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Serviços</h4>
+                        <ul>
+                            <li><a href="#servicos">Desenvolvimento Web</a></li>
+                            <li><a href="#servicos">Design UI/UX</a></li>
+                            <li><a href="#servicos">Marketing & SEO</a></li>
+                            <li><a href="#servicos">Agentes de IA</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="#home">Início</a></li>
+                            <li><a href="#diferenciais">Diferenciais</a></li>
+                            <li><a href="#processo">Como Funciona</a></li>
+                            <li><a href="#planos">Planos</a></li>
+                            <li><a href="#depoimentos">Depoimentos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Newsletter</h4>
+                        <p class="footer-text">Receba novidades e estratégias no seu e-mail.</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" placeholder="Seu e-mail..." required>
+                            <button type="submit" aria-label="Assinar"><i class="fa-solid fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nexus Digital. Todos os direitos reservados. Projeto criado com HTML & CSS.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <div class="toast-message" id="toastMessage">Mensagem enviada com sucesso!</div>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

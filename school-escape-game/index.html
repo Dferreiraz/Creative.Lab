@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <title>Escape da Escola — Jogo 2D</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Canvas principal do jogo -->
+        <canvas id="gameCanvas" width="960" height="600"></canvas>
+
+        <!-- Dynamic HUD Overlay -->
+        <div id="hud" class="hidden">
+            <div class="hud-card keys-card">
+                <span class="hud-icon">🔑</span>
+                <span class="hud-label">Chaves:</span>
+                <span id="keys-count" class="hud-value">0/3</span>
+            </div>
+
+            <div id="fruit-status" class="hud-card fruit-card inactive">
+                <span class="hud-icon fruit-bounce">🍓</span>
+                <div class="timer-container">
+                    <span class="fruit-label">Modo Pequeno</span>
+                    <div class="timer-bar-bg">
+                        <div id="fruit-bar" class="timer-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hud-card time-card">
+                <span class="hud-icon">⏱️</span>
+                <span id="game-time" class="hud-value">00:00</span>
+            </div>
+
+            <button id="sound-toggle" class="hud-btn" title="Alternar Som">🔊</button>
+        </div>
+
+        <!-- Toast Notification Overlay -->
+        <div id="toast-notification" class="toast-card hidden">
+            <span id="toast-icon">✨</span>
+            <span id="toast-message">A porta de saída foi desbloqueada!</span>
+        </div>
+
+        <!-- Tela Inicial -->
+        <div id="start-screen" class="overlay-screen active">
+            <div class="screen-content">
+                <div class="badge">JOGO 2D DE ESCAPE</div>
+                <h1 class="game-title">ESCAPE DA ESCOLA</h1>
+                <p class="game-quote">"Encontre as chaves. Evite os seguranças. Encontre uma saída."</p>
+
+                <div class="actions">
+                    <button id="start-btn" class="btn btn-primary btn-glow">
+                        <span class="btn-text">JOGAR</span>
+                        <span class="btn-icon">▶</span>
+                    </button>
+                </div>
+
+                <!-- Seção Como Jogar -->
+                <div class="how-to-play-card">
+                    <h3>🕹️ Como Jogar</h3>
+                    <div class="instructions-grid">
+                        <div class="instruction-item">
+                            <div class="key-badge">W A S D / ⌨️ Setas</div>
+                            <span>Movimentação pelo mapa</span>
+                        </div>
+                        <div class="instruction-item">
+                            <div class="icon-badge">🔑</div>
+                            <span>Colete chaves para abrir portas trancadas</span>
+                        </div>
+                        <div class="instruction-item">
+                            <div class="icon-badge">🍓</div>
+                            <span>Pegue a frutinha para encolher e usar tubos/atalhos</span>
+                        </div>
+                        <div class="instruction-item">
+                            <div class="icon-badge">👮</div>
+                            <span>Evite alunos e os cones de visão dos seguranças</span>
+                        </div>
+                        <div class="instruction-item full-width">
+                            <div class="icon-badge">🚪</div>
+                            <span>Desbloqueie os caminhos e alcance a saída final!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela Game Over -->
+        <div id="game-over-screen" class="overlay-screen hidden">
+            <div class="screen-content modal-card danger-theme">
+                <div class="modal-icon">🚨</div>
+                <h2>VOCÊ FOI PEGO!</h2>
+                <p>Um segurança ou aluno te pegou no corredor. Mantenha a atenção!</p>
+                <div class="actions">
+                    <button id="restart-btn" class="btn btn-danger">
+                        <span>TENTAR NOVAMENTE</span>
+                        <span class="btn-icon">🔄</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de Vitória -->
+        <div id="victory-screen" class="overlay-screen hidden">
+            <div class="screen-content modal-card success-theme">
+                <div class="modal-icon">🎉</div>
+                <h2>VOCÊ ESCAPOU DA ESCOLA!</h2>
+                <p>Parabéns! Você encontrou todas as chaves e conseguiu fugir com sucesso.</p>
+                
+                <div class="stats-box">
+                    <span class="stats-label">Tempo da Partida:</span>
+                    <span id="final-time" class="stats-value">00:00</span>
+                </div>
+
+                <div class="actions">
+                    <button id="victory-restart-btn" class="btn btn-success btn-glow">
+                        <span>JOGAR NOVAMENTE</span>
+                        <span class="btn-icon">🔄</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Módulos do Jogo -->
+    <script src="./js/map.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/items.js"></script>
+    <script src="./js/enemies.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

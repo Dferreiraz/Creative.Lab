@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reddit Tech Insights | Dashboard Analítico</title>
+  <meta name="description" content="Dashboard analítico e profissional para monitoramento de tendências, engajamento e insights de tecnologia do Reddit (n8n e Automação).">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./styles/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Chart.js (CDN para gráficos analíticos leves) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- App Layout Shell -->
+  <div class="app-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="sidebar-brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div class="brand-text">
+            Reddit <span>Insights</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-section-title">Menu Principal</div>
+          
+          <a href="#dashboard" class="nav-item active">
+            <div class="nav-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Dashboard</span>
+            </div>
+            <span class="nav-badge">Live</span>
+          </a>
+
+          <a href="#overview" class="nav-item">
+            <div class="nav-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"></path>
+                <path d="m19 9-5 5-4-4-3 3"></path>
+              </svg>
+              <span>Overview</span>
+            </div>
+          </a>
+
+          <a href="#trends" class="nav-item">
+            <div class="nav-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+              <span>Trends & Gráficos</span>
+            </div>
+          </a>
+
+          <div class="nav-section-title">Exploração</div>
+
+          <a href="#subreddits" class="nav-item">
+            <div class="nav-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <span>Subreddits</span>
+            </div>
+          </a>
+
+          <a href="#technologies" class="nav-item">
+            <div class="nav-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <span>Technologies</span>
+            </div>
+          </a>
+
+          <a href="#posts-section" class="nav-item">
+            <div class="nav-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>Posts Coletados</span>
+            </div>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="system-status-box">
+          <div class="status-dot"></div>
+          <div>
+            <div style="font-weight: 600; color: var(--text-primary);">Pipeline Ativo</div>
+            <div style="font-size: 0.7rem; color: var(--text-muted);">Python Extractor Ready</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="main-content-wrapper">
+      
+      <!-- Top Navbar / Header -->
+      <header class="header-topbar">
+        <div class="header-left">
+          <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Abrir Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          
+          <div class="breadcrumb-area">
+            <div class="breadcrumb-path">DASHBOARD / <span>OVERVIEW</span></div>
+            <h1 class="page-headline">Tech Insights Hub</h1>
+          </div>
+        </div>
+
+        <div class="header-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="globalSearchInput" placeholder="Pesquisar tópicos, termos, autores ou tags...">
+        </div>
+
+        <div class="header-actions">
+          <!-- Light / Dark Mode Toggle Button -->
+          <button id="themeToggleBtn" class="theme-toggle-btn" title="Alternar entre Modo Claro e Escuro" aria-label="Alternar Tema">
+            <span id="themeIcon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+          </button>
+
+          <!-- Refresh Button -->
+          <button id="refreshBtn" class="action-btn btn-refresh-live" title="Buscar atualizações em tempo real">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            </svg>
+            <span>Live Sync</span>
+          </button>
+
+          <!-- User Badge -->
+          <div class="user-profile-badge">
+            <div class="user-avatar">TI</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Container -->
+      <main class="dashboard-container" id="dashboard">
+        
+        <!-- Section 1: KPI Metric Cards with Radial Progress Rings -->
+        <section class="metrics-grid" id="overview">
+          
+          <!-- Card 1: Posts Analisados -->
+          <div class="kpi-card orange">
+            <div class="kpi-content">
+              <span class="kpi-label">Posts Analisados</span>
+              <div class="kpi-value" id="kpiTotalPosts">10</div>
+              <span class="kpi-trend positive">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                Top 5 de cada categoria
+              </span>
+            </div>
+            <div class="kpi-radial">
+              <svg viewBox="0 0 64 64">
+                <circle class="radial-bg" cx="32" cy="32" r="26"></circle>
+                <circle class="radial-progress orange" cx="32" cy="32" r="26" style="stroke-dashoffset: 20;"></circle>
+              </svg>
+              <div class="radial-center-icon">⚡</div>
+            </div>
+          </div>
+
+          <!-- Card 2: Média de Engajamento -->
+          <div class="kpi-card cyan">
+            <div class="kpi-content">
+              <span class="kpi-label">Média de Engajamento</span>
+              <div class="kpi-value" id="kpiAvgEngagement">49.3</div>
+              <span class="kpi-trend positive">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                Score + Comments*1.5
+              </span>
+            </div>
+            <div class="kpi-radial">
+              <svg viewBox="0 0 64 64">
+                <circle class="radial-bg" cx="32" cy="32" r="26"></circle>
+                <circle class="radial-progress cyan" cx="32" cy="32" r="26" style="stroke-dashoffset: 45;"></circle>
+              </svg>
+              <div class="radial-center-icon">🔥</div>
+            </div>
+          </div>
+
+          <!-- Card 3: Total de Comentários -->
+          <div class="kpi-card purple">
+            <div class="kpi-content">
+              <span class="kpi-label">Total de Comentários</span>
+              <div class="kpi-value" id="kpiTotalComments">106</div>
+              <span class="kpi-trend positive">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                Comunidade ativa
+              </span>
+            </div>
+            <div class="kpi-radial">
+              <svg viewBox="0 0 64 64">
+                <circle class="radial-bg" cx="32" cy="32" r="26"></circle>
+                <circle class="radial-progress purple" cx="32" cy="32" r="26" style="stroke-dashoffset: 35;"></circle>
+              </svg>
+              <div class="radial-center-icon">💬</div>
+            </div>
+          </div>
+
+          <!-- Card 4: Top Upvotes Líquidos -->
+          <div class="kpi-card green">
+            <div class="kpi-content">
+              <span class="kpi-label">Top Score (Upvotes)</span>
+              <div class="kpi-value" id="kpiTopScore">▲ 215</div>
+              <span class="kpi-trend positive">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                r/autohospedagem
+              </span>
+            </div>
+            <div class="kpi-radial">
+              <svg viewBox="0 0 64 64">
+                <circle class="radial-bg" cx="32" cy="32" r="26"></circle>
+                <circle class="radial-progress green" cx="32" cy="32" r="26" style="stroke-dashoffset: 15;"></circle>
+              </svg>
+              <div class="radial-center-icon">▲</div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Section 2: Analytics & Trends Charts -->
+        <section class="charts-grid" id="trends">
+          
+          <!-- Chart Card: Activity & Engagement Curve -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title-group">
+                <h3>Curva de Engajamento vs. Upvotes</h3>
+                <p>Comparação dos posts mais relevantes coletados pelo extrator</p>
+              </div>
+              <span class="chart-badge">Tempo Real</span>
+            </div>
+            <div class="chart-canvas-container">
+              <canvas id="trendChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Topic & Tech Distribution Card -->
+          <div class="chart-card" id="technologies">
+            <div class="chart-header">
+              <div class="chart-title-group">
+                <h3>Principais Tecnologias</h3>
+                <p>Frequência nos tópicos de maior engajamento</p>
+              </div>
+              <span class="chart-badge">Tags</span>
+            </div>
+
+            <div class="tech-breakdown-list">
+              <div class="tech-progress-item">
+                <div class="tech-progress-info">
+                  <span class="tech-name"><span class="tech-dot" style="background: #FF5C00;"></span> n8n Workflows</span>
+                  <span style="font-weight: 700; color: var(--text-primary);">40%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" style="width: 40%; background: linear-gradient(90deg, #FF5C00, #FF8A00);"></div>
+                </div>
+              </div>
+
+              <div class="tech-progress-item">
+                <div class="tech-progress-info">
+                  <span class="tech-name"><span class="tech-dot" style="background: #00F2FE;"></span> Agentes IA & Claude</span>
+                  <span style="font-weight: 700; color: var(--text-primary);">25%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" style="width: 25%; background: linear-gradient(90deg, #00F2FE, #4FACFE);"></div>
+                </div>
+              </div>
+
+              <div class="tech-progress-item">
+                <div class="tech-progress-info">
+                  <span class="tech-name"><span class="tech-dot" style="background: #8B5CF6;"></span> Docker & Homelab</span>
+                  <span style="font-weight: 700; color: var(--text-primary);">20%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" style="width: 20%; background: linear-gradient(90deg, #8B5CF6, #D946EF);"></div>
+                </div>
+              </div>
+
+              <div class="tech-progress-item">
+                <div class="tech-progress-info">
+                  <span class="tech-name"><span class="tech-dot" style="background: #10B981;"></span> Python & Google Drive</span>
+                  <span style="font-weight: 700; color: var(--text-primary);">15%</span>
+                </div>
+                <div class="tech-bar-track">
+                  <div class="tech-bar-fill" style="width: 15%; background: linear-gradient(90deg, #10B981, #34D399);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Section 3: Filter & Controls Bar -->
+        <section class="tabs-and-controls" id="posts-section">
+          <div class="section-headline">
+            <div>
+              <h2>Feed de Posts e Discussões</h2>
+              <p>Explore as publicações ranqueadas por engajamento e métricas da comunidade</p>
+            </div>
+            
+            <!-- Category Tabs -->
+            <div class="custom-tabs-nav" id="subreddits">
+              <button class="tab-pill all active" data-tab="all">
+                <span>Todos</span>
+                <span class="tab-count" id="tabCountAll">10</span>
+              </button>
+              <button class="tab-pill n8n" data-tab="n8n">
+                <span>n8n Workflows</span>
+                <span class="tab-count" id="tabCountN8n">5</span>
+              </button>
+              <button class="tab-pill auto" data-tab="automacao">
+                <span>Automação</span>
+                <span class="tab-count" id="tabCountAuto">5</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="filters-row">
+            <div class="search-field-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="searchInput" placeholder="Filtrar por palavras-chave, autor ou tags...">
+            </div>
+
+            <div class="sort-group">
+              <label for="sortSelect">Classificar por:</label>
+              <select id="sortSelect" class="sort-select">
+                <option value="engagement">🔥 Maior Engajamento</option>
+                <option value="score">▲ Maior Pontuação (Upvotes)</option>
+                <option value="comments">💬 Mais Comentados</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Posts Grid Container -->
+        <section id="postsContainer" class="posts-grid">
+          <!-- Injetado dinamicamente via src/js/app.js -->
+        </section>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+          <p>Reddit Tech Insights Dashboard • Extração e Análise Inteligente de Dados com Python e Vanilla Web</p>
+        </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="./js/app.js"></script>
+</body>
+</html>
